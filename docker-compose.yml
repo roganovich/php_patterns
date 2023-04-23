@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+    fpm:
+        build:
+            context: .
+            dockerfile: docker/Fpm.Dockerfile
+        container_name: php_patterns_fpm
+        restart: unless-stopped
+        tty: true
+        volumes:
+            - ./:/var/www
+            - ./docker/conf/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - app-network
+        links:
+            - nginx
+    nginx:
+        build:
+            context: .
+            dockerfile: docker/Nginx.Dockerfile
+        container_name: php_patterns_nginx
+        restart: unless-stopped
+        tty: true
+        volumes:
+            - ./:/var/www
+        ports:
+            - 8098:80
+        networks:
+            - app-network
+networks:
+    app-network:
+        driver: bridge
+volumes:
+    dbdata:
+        driver: local
+
+
