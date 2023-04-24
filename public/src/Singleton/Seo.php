@@ -1,9 +1,9 @@
 <?php
-
+namespace Singleton;
 /**
  * Singleton class
  */
-class SiteCity
+class Seo
 {
 
     /**
@@ -14,7 +14,7 @@ class SiteCity
     /**
      * @var string
      */
-    public $name;
+    public $yandex_id;
 
     /**
      * Return self instance
@@ -37,22 +37,3 @@ class SiteCity
     {
     }
 }
-
-function start()
-{
-    $siteCity1 = SiteCity::getInstance();
-    $siteCity2 = SiteCity::getInstance();
-    $siteCity3 = SiteCity::getInstance();
-
-    $siteCity1->name = 'SPB';
-    $siteCity2->name = 'MSK';
-    $siteCity3->name = 'UFA';
-
-    echo sprintf('Город 1: %s', $siteCity1->name);
-    echo '<br>';
-    echo sprintf('Город 2: %s', $siteCity2->name);
-    echo '<br>';
-    echo sprintf('Город 3: %s', $siteCity3->name);
-}
-
-start();

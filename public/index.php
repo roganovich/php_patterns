@@ -1,3 +1,5 @@
 <ul>
-<li><a href="/1_Singleton.php">1_Singleton</a></li>
+<li>
+    <li><a href="/singleton.php">1. Singleton</a></li>
+    <li><a href="/singleton_poll.php">2. SingletonPoll</a></li>
 </ul>

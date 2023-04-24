@@ -1,0 +1,13 @@
+{
+    "name": "roman/public",
+    "autoload": {
+        "classmap": ["src"]
+    },
+    "authors": [
+        {
+            "name": "Roman Roganovich",
+            "email": "roman.roganovich@mail.ru"
+        }
+    ],
+    "require": {}
+}
