@@ -1,11 +1,11 @@
 <?php
-namespace Singleton;
+
+namespace NS\Singleton;
 /**
  * Singleton class
  */
 class Seo
 {
-
     /**
      * @var self
      */
@@ -26,6 +26,7 @@ class Seo
         if (!(self::$instance instanceof self)) {
             self::$instance = new self();
         }
+
         return self::$instance;
     }
 

@@ -1,5 +1,8 @@
-<ul>
-<li>
-    <li><a href="/singleton.php">1. Singleton</a></li>
-    <li><a href="/singleton_poll.php">2. SingletonPoll</a></li>
-</ul>
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+
+echo \NS\HtmlTag::open('div', ['padding:10px']);
+echo \NS\Menu::getInstance()->getMenu();
+echo \NS\HtmlTag::close('div');
+echo __FILE__;
+?>

@@ -1,10 +1,11 @@
 <?php
 /**
  * Шаблон одиночка позволяет гарантировать, что обьект класса не будет перезаписан, а его состояние всегда одно
+ *
 */
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-use Singleton\City;
+use NS\Singleton\City;
 
 function run()
 {
@@ -29,4 +30,10 @@ function run()
     echo sprintf('Город 3: %s', $siteCity3->name);
 }
 
+echo \NS\HtmlTag::open('div', ['padding:10px']);
+echo \NS\Menu::getInstance()->getMenu();
+echo \NS\HtmlTag::close('div');
+echo __FILE__;
+echo \NS\HtmlTag::open('div', ['padding:10px']);
 run();
+echo \NS\HtmlTag::close('div');

@@ -2,9 +2,9 @@
 /**
  * Набор уникальных обьектов со своими свойствами
 */
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-use SingletonPoll\Factory;
+use NS\SingletonPoll\Factory;
 
 function run()
 {
@@ -40,4 +40,10 @@ function run()
     echo '</pre>';
 }
 
+echo \NS\HtmlTag::open('div', ['padding:10px']);
+echo \NS\Menu::getInstance()->getMenu();
+echo \NS\HtmlTag::close('div');
+echo __FILE__;
+echo \NS\HtmlTag::open('div', ['padding:10px']);
 run();
+echo \NS\HtmlTag::close('div');

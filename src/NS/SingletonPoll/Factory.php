@@ -1,7 +1,5 @@
 <?php
-namespace SingletonPoll;
-
-use SingletonPoll\FactoryAbstract;
+namespace NS\SingletonPoll;
 
 abstract class Factory extends FactoryAbstract {
 
