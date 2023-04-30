@@ -10,6 +10,7 @@ use NS\Registry\Settings;
 
 function run()
 {
+    \NS\Log::print(__FILE__);
     /**
      * Например, можно храть данные настроек приложения после их инициализации
      */
@@ -21,17 +22,12 @@ function run()
     /**
      * И потом легко доставать для работы со сторонними апи или подключением к БД
      */
-    echo sprintf('curl %s %s@%s:%s',
+    \NS\Log::print(sprintf('curl %s %s@%s:%s',
         Settings::get('method'),
         Settings::get('server'),
         Settings::get('login'),
-        Settings::get('password'));
+        Settings::get('password')));
 }
 
-echo \NS\HtmlTag::open('div', ['padding:10px']);
-echo \NS\Menu::getInstance()->getMenu();
-echo \NS\HtmlTag::close('div');
-echo __FILE__;
-echo \NS\HtmlTag::open('div', ['padding:10px']);
+\NS\Menu::getInstance()->getMenu();
 run();
-echo \NS\HtmlTag::close('div');

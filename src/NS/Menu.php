@@ -18,6 +18,8 @@ class Menu
         '/registry.php' => 'Registry',
         '/factory.php' => 'Factory',
         '/abstractfactory.php' => 'Abstract Factory',
+        '/observer.php' => 'Observer',
+        '/adapter.php' => 'Adapter',
     ];
 
     /**
@@ -36,6 +38,7 @@ class Menu
 
     public function getMenu()
     {
+        echo \NS\HtmlTag::open('div', ['padding:10px']);
         $menu = '<ol style="padding:10px">';
         foreach ($this->menuItems as $href => $item) {
             $menu .= '<li>';
@@ -43,8 +46,8 @@ class Menu
             $menu .= '</li>';
         }
         $menu .= '</ol>';
-
-        return $menu;
+        echo $menu;
+        echo \NS\HtmlTag::close('div');
     }
 
 }

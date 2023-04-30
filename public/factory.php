@@ -16,6 +16,7 @@ use NS\Factory\ProductUsedFactory;
 
 function run()
 {
+    \NS\Log::print(__FILE__);
     /**
      * Например, можно создать объект товара
      */
@@ -34,15 +35,9 @@ function run()
     $factory = new ProductUsedFactory();
     $secondProduct = $factory->getProduct();
 
-    echo sprintf('Создали товар с типом: %s', $firstProduct->getType());
-    echo '<br>';
-    echo sprintf('Создали товар с типом: %s', $secondProduct->getType());
+    \NS\Log::print(sprintf('Создали товар с типом: %s', $firstProduct->getType()));
+    \NS\Log::print(sprintf('Создали товар с типом: %s', $secondProduct->getType()));
 }
 
-echo \NS\HtmlTag::open('div', ['padding:10px']);
-echo \NS\Menu::getInstance()->getMenu();
-echo \NS\HtmlTag::close('div');
-echo __FILE__;
-echo \NS\HtmlTag::open('div', ['padding:10px']);
+\NS\Menu::getInstance()->getMenu();
 run();
-echo \NS\HtmlTag::close('div');

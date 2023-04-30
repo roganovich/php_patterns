@@ -15,6 +15,11 @@ use NS\Strategy\Sorter;
 
 function run()
 {
+    \NS\Log::print(__FILE__);
+    /**
+     * Наример, у нас есть список и мы можем выбрать каким методом/классом его обработать
+     * Вместо написания 2х функций, правильнее сделать 2 разных класса и просто передать его в наш список
+     */
     $dataset = [];
 
     for ($i = 0; $i < 5000; $i++) {
@@ -24,20 +29,13 @@ function run()
     $start = microtime(true);
     $sorter = new Sorter(new Bubble());
     $sorter->sort($dataset);
-    echo sprintf('Время выполнения пузырьковой сортировки: %s с.', microtime(true) - $start);
-
-    echo '<hr>';
+    \NS\Log::print(sprintf('Время выполнения пузырьковой сортировки: %s с.', microtime(true) - $start));
 
     $start = microtime(true);
     $sorter = new Sorter(new QuickSort());
     $sort_2 = $sorter->sort($dataset);
-    echo sprintf('Время выполнения быстрой сортировки: %s с.', microtime(true) - $start);
+    \NS\Log::print(sprintf('Время выполнения быстрой сортировки: %s с.', microtime(true) - $start));
 }
 
-echo \NS\HtmlTag::open('div', ['padding:10px']);
-echo \NS\Menu::getInstance()->getMenu();
-echo \NS\HtmlTag::close('div');
-echo __FILE__;
-echo \NS\HtmlTag::open('div', ['padding:10px']);
+\NS\Menu::getInstance()->getMenu();
 run();
-echo \NS\HtmlTag::close('div');

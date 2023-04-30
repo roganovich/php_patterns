@@ -14,28 +14,26 @@ use NS\Decorator\TiresWithRunflet;
 
 function run()
 {
+    \NS\Log::print(__FILE__);
     /**
      * Можно таким образом декорировать компоновку сложной работы по шиномонтажу
      * Мы к изменяем состояние уже созданного объекта, при этом другие объекты не трогаются
      */
     $simpleTires = new Simple();
-    echo $simpleTires->getDescription() . ' '; // Установка шин
-    echo $simpleTires->getCost() . '<br>'; // 250
+    $row = $simpleTires->getDescription() . ' '; // Установка шин
+    $row .= $simpleTires->getCost(); // 250
+    \NS\Log::print($row);
 
     $tiresWithDisc = new TiresWithDisc($simpleTires);
-    echo $tiresWithDisc->getDescription() . ' '; // Установка шин, с дисками
-    echo $tiresWithDisc->getCost() . '<br>';  // 250 + 50
+    $row = $tiresWithDisc->getDescription() . ' '; // Установка шин, с дисками
+    $row .= $tiresWithDisc->getCost();  // 250 + 50
+    \NS\Log::print($row);
 
     $tiresWithRunflet = new TiresWithRunflet($tiresWithDisc);
-    echo $tiresWithRunflet->getDescription() . ' '; // Установка шин, с дисками, с ранфлет
-    echo $tiresWithRunflet->getCost() . '<br>'; // 250 + 50 + 300
-
+    $row = $tiresWithRunflet->getDescription() . ' '; // Установка шин, с дисками, с ранфлет
+    $row .= $tiresWithRunflet->getCost(); // 250 + 50 + 300
+    \NS\Log::print($row);
 }
 
-echo \NS\HtmlTag::open('div', ['padding:10px']);
-echo \NS\Menu::getInstance()->getMenu();
-echo \NS\HtmlTag::close('div');
-echo __FILE__;
-echo \NS\HtmlTag::open('div', ['padding:10px']);
+\NS\Menu::getInstance()->getMenu();
 run();
-echo \NS\HtmlTag::close('div');
