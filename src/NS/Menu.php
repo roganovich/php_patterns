@@ -15,6 +15,7 @@ class Menu
         '/singleton_poll.php' => 'SingletonPoll',
         '/strategy.php' => 'Strategy',
         '/decorator.php' => 'Decorator',
+        '/registry.php' => 'Registry',
     ];
 
     /**
