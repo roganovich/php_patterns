@@ -11,8 +11,8 @@ use NS\Registry\Settings;
 function run()
 {
     /**
-     * Например можно храть данные настроек приложения после их инициализации
-    */
+     * Например, можно храть данные настроек приложения после их инициализации
+     */
     Settings::set('login', 'root');
     Settings::set('password', '123456');
     Settings::set('server', '127.0.0.1');
@@ -20,7 +20,7 @@ function run()
 
     /**
      * И потом легко доставать для работы со сторонними апи или подключением к БД
-    */
+     */
     echo sprintf('curl %s %s@%s:%s',
         Settings::get('method'),
         Settings::get('server'),
