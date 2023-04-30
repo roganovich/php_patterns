@@ -17,6 +17,7 @@ class Menu
         '/decorator.php' => 'Decorator',
         '/registry.php' => 'Registry',
         '/factory.php' => 'Factory',
+        '/abstractfactory.php' => 'Abstract Factory',
     ];
 
     /**
