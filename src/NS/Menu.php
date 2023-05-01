@@ -20,6 +20,8 @@ class Menu
         '/abstractfactory.php' => 'Abstract Factory',
         '/observer.php' => 'Observer',
         '/adapter.php' => 'Adapter',
+        '/lazyinitialization.php' => 'LazyInitialization',
+        '/chainofresponsibility.php' => 'ChainOfResponsibility',
     ];
 
     /**
