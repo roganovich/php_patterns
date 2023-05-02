@@ -22,6 +22,8 @@ class Menu
         '/adapter.php' => 'Adapter',
         '/lazyinitialization.php' => 'LazyInitialization',
         '/chainofresponsibility.php' => 'ChainOfResponsibility',
+        '/prototype.php' => 'Prototype',
+        '/builder.php' => 'Builder',
     ];
 
     /**
